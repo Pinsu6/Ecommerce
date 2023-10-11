@@ -11,6 +11,6 @@
     </head>
     <body>
         <%@include file="Components/navbar.jsp" %>
-
+        <h1>Home </h1>
     </body>
 </html>

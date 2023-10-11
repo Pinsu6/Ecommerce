@@ -1,3 +1,4 @@
+com\learn\mycart\servlet\Register.class
 com\learn\mycart\entities\User.class
 com\learn\mycart\entities\Product.class
 com\mycompany\ecommerce\JAXRSConfiguration.class

@@ -23,8 +23,10 @@ public class User {
     private String userPic;
     @Column (length = 1500, name="user_adress")
     private String userAdress;
+    @Column(name="user_type")
+    private String userType;
 
-    public User(int UserId, String UserName, String UserEmail, String userPassword, String userPhone, String userPic, String userAdress) {
+    public User(int UserId, String UserName, String UserEmail, String userPassword, String userPhone, String userPic, String userAdress, String userType) {
         this.UserId = UserId;
         this.UserName = UserName;
         this.UserEmail = UserEmail;
@@ -32,17 +34,19 @@ public class User {
         this.userPhone = userPhone;
         this.userPic = userPic;
         this.userAdress = userAdress;
+        this.userType = userType;
     }
-
-    public User(String UserName, String UserEmail, String userPassword, String userPhone, String userPic, String userAdress) {
+   
+    public User( String UserName, String UserEmail, String userPassword, String userPhone, String userPic, String userAdress, String userType) {
+        this.UserId = UserId;
         this.UserName = UserName;
         this.UserEmail = UserEmail;
         this.userPassword = userPassword;
         this.userPhone = userPhone;
         this.userPic = userPic;
         this.userAdress = userAdress;
+        this.userType = userType;
     }
-
     public User() {
     }
 
@@ -100,6 +104,14 @@ public class User {
 
     public void setUserAdress(String userAdress) {
         this.userAdress = userAdress;
+    }
+
+    public String getUserType() {
+        return userType;
+    }
+
+    public void setUserType(String userType) {
+        this.userType = userType;
     }
 
     @Override
