@@ -5,7 +5,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Register Page</title>
         <link rel="stylesheet" href="./css/style.css"/>
-        <%@include file="Components/common_css_js.jsp" %>
+
     </head>
     <body class="registerBody">
 
@@ -16,7 +16,8 @@
                 <div class="col-md-6 offset-md-3 ">
                     <div class="card shadow-lg p-3 mb-3 bg-body-tertiary rounded">
                         <div class="card-body px-5 ">
-                            <div class="h1 text-center"> <i class="fa-solname fa-user "></i></div>
+                            <div class="h1 text-center"> <i class="fa-solid fa-user "></i></div>
+                            <%@include file="/Components/Message.jsp" %>
                             <h3 class="text-center mb-4">Sign here</h3>
 
                             <form action="Register" method="post">
@@ -55,6 +56,7 @@
                                 </div>
                                 <div class="container text-center">
                                     <button type="submit" class="btn btn-primary">Submit!</button>
+                                      <p class="mt-3">Already  have an account <a href="login.jsp">Login</a> </p>
                                 </div>
                         </div>
                         </form>
@@ -64,5 +66,6 @@
         </div>  
     </div>
 </div>
+        
 </body>
 </html>

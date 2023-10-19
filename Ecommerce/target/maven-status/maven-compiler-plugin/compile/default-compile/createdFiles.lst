@@ -1,7 +1,9 @@
 com\learn\mycart\servlet\Register.class
 com\learn\mycart\entities\User.class
+com\learn\mycart\servlet\LoginServlet.class
 com\learn\mycart\entities\Product.class
 com\mycompany\ecommerce\JAXRSConfiguration.class
 com\learn\mycart\entities\Category.class
 com\learn\mycart\helpper\FactoryProvider.class
 com\mycompany\ecommerce\resources\JavaEE8Resource.class
+com\learn\mycart\dao\UserDao.class

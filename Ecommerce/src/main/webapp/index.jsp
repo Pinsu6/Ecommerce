@@ -1,16 +1,27 @@
 
-
-<%@page import="com.learn.mycart.helpper.FactoryProvider"%>
+<%@page import="com.learn.mycart.entities.User"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%
+    User u = (User) session.getAttribute("current-user");
+    if (u == null) {
 
-<!DOCTYPE html>
+        response.sendRedirect("login.jsp");
+        return;
+    }
+
+%>
+
+
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Home Page</title>
+        <title>JSP Page</title>
     </head>
     <body>
         <%@include file="Components/navbar.jsp" %>
-        <h1>Home </h1>
+        <%            u = (User) session.getAttribute("current-user");
+            out.print(u.getUserName());
+        %>
     </body>
 </html>
+

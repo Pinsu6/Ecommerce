@@ -1,4 +1,3 @@
-
 package com.learn.mycart.servlet;
 
 import com.learn.mycart.entities.User;
@@ -9,32 +8,32 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import org.hibernate.*;
-
 
 public class Register extends HttpServlet {
 
-  
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
-         String userName= request.getParameter("userName");
-         String userEmail= request.getParameter("userEmail");
-         String userPassword= request.getParameter("userPassword");
-         String userPhone= request.getParameter("userPhone");
-         String userAddress= request.getParameter("userAddress");
-         
-         
-        User user = new User(userName, userEmail, userPassword, userPhone, "default.jpg", userAddress,"normal");
-        Session hibernateSession =FactoryProvider.getFactory().openSession();
-        Transaction tx =hibernateSession.beginTransaction();
-        
-        int userId=(int) hibernateSession.save(user);
-        
-        out.print(userId);
-        
-        tx.commit();
+            String userName = request.getParameter("userName");
+            String userEmail = request.getParameter("userEmail");
+            String userPassword = request.getParameter("userPassword");
+            String userPhone = request.getParameter("userPhone");
+            String userAddress = request.getParameter("userAddress");
+
+            User user = new User(userName, userEmail, userPassword, userPhone, "default.jpg", userAddress, "normal");
+            Session hibernateSession = FactoryProvider.getFactory().openSession();
+            Transaction tx = hibernateSession.beginTransaction();
+
+            int userId = (int) hibernateSession.save(user);
+
+            tx.commit();
+            HttpSession session = request.getSession();
+           session.setAttribute("message", "Register Successfully");
+           response.sendRedirect("Register.jsp");
+           
         }
     }
 

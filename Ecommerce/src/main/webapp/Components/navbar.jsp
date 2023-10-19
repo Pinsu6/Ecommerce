@@ -1,4 +1,5 @@
 
+<%@page import="com.learn.mycart.entities.User"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
 
@@ -40,12 +41,33 @@
 
                     </ul>
                     <ul class="navbar-nav   ml-auto">
+                        <%
+                            User u1 = (User) session.getAttribute("current-user");
+                            
+                            if (u1 == null) {
+                        %>
                         <li class="nav-item">
-                            <a class="nav-link " aria-current="page" href="Login.jsp">Login</a>
+                            <a class="nav-link " aria-current="page" href="login.jsp">Login</a>
                         </li > 
                         <li class="nav-item"s>  
                             <a class="nav-link " aria-current="page" href="Register.jsp">Register</a> 
                         </li>
+                        <%
+                            }
+                            else
+                            {
+                            %>
+                            <li class="nav-item">
+                                <a class="nav-link " aria-current="page" href="#"><%=u1.getUserName()%></a>
+                        </li > 
+                        <li class="nav-item"s> 
+                            
+                            <a class="nav-link " aria-current="page" href="Logout.jsp">Logout</a> 
+                        </li>
+                            <%
+                            }
+                        %>
+
 
                     </ul>
                 </div>
