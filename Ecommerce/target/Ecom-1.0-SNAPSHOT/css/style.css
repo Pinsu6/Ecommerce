@@ -8,3 +8,8 @@
 {
     background-color: #eeeeee;
 }
+.admin .card:hover
+{
+    background-color: #eeeeee;
+    cursor:pointer;
+}

@@ -62,7 +62,7 @@
                         </li > 
                         <li class="nav-item"s> 
                             
-                            <a class="nav-link " aria-current="page" href="Logout.jsp">Logout</a> 
+                            <a class="nav-link " aria-current="page" href="./LogoutServlet.java">Logout</a> 
                         </li>
                             <%
                             }

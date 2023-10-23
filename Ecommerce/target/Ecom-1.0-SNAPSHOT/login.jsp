@@ -1,4 +1,3 @@
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -17,6 +16,7 @@
                 <div class="row mt-5">
                     <div class="col-md-6 offset-md-3 ">
                         <div class="card shadow-lg p-3 mb-3 bg-body-tertiary rounded">
+                            
                             <div class="card-body px-5 ">
                                 <div class="h1 text-center"> <i class="fa-solid fa-user "></i></div>
                                     <%@include file="/Components/Message.jsp" %>
