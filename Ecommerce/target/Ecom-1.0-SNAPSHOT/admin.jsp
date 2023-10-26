@@ -16,7 +16,7 @@
         <title>Admin Page</title>
     </head>
     <body>
-
+        <%@include file="/Components/Message.jsp" %>
         <div class="container admin">
             <div class="row mt-5">
                 <!--user coll-->
@@ -80,24 +80,27 @@
         <div class="modal fade" id="AddCategorie" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
-                    <div class="modal-header bg-info t">
-                        <h1 class="modal-title fs-5 text-white " id="exampleModalLabel">Add Category</h1>
+                    <form action="productoperarion"> 
+                        <div class="modal-header bg-info t">
+                            <h1 class="modal-title fs-5 text-white " id="exampleModalLabel">Add Category</h1>
 
-                    </div>
-                    <div class="modal-body">
-                        <form>
+                        </div>
+                        <div class="modal-body">
+
+
                             <div class="form-group">
-                                <input class="form-control" placeholder="Enter Title Of category">  
+                                <input type="hidden" name="category">
+                                <input class="form-control" name="title" placeholder="Enter Title Of category">  
                             </div>
                             <div class="form-group mt-4">
-                                <textarea style="height: 350px" class="form-control" placeholder="Enetr Description Of category"></textarea>
+                                <textarea style="height: 350px" name="description" class="form-control" placeholder="Enetr Description Of category"></textarea>
                             </div>
-                        </form>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-outline-success">Add Category</button>
-                    </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="submit" class="btn btn-outline-success">Add Category</button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>

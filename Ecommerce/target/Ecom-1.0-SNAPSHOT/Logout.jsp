@@ -8,9 +8,7 @@
     </head>
     <body>
         <%
-                 session=request.getSession();
-           session.removeAttribute("current-user");
-           response.sendRedirect("login.jsp");
+               
          %>
     </body>
 </html>

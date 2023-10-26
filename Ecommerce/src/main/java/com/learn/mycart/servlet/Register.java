@@ -30,6 +30,7 @@ public class Register extends HttpServlet {
             int userId = (int) hibernateSession.save(user);
 
             tx.commit();
+            
     
            response.sendRedirect("index.jsp");
            
