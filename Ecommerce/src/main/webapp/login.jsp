@@ -9,7 +9,7 @@
      
     </head>
     <body class="registerBody">
-        <%@include file="Components/navbar.jsp" %>
+      
 
         <form action="LoginServlet" method="post">
             <div class="container">

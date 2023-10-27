@@ -1,4 +1,3 @@
-
 package com.learn.mycart.servlet;
 
 import com.learn.mycart.dao.Categorydao;
@@ -12,35 +11,36 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-
 public class productoperarion extends HttpServlet {
 
-   
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
-           String title=request.getParameter("title");
-           String desc=request.getParameter("description");
-           String operarion = request.getParameter("category");
-           
-          
-               Category c = new Category();
-               c.setCategoryTittle(title);
-               c.setCategoryDescription(desc);
-               Categorydao categorydao = new Categorydao(FactoryProvider.getFactory());
-               System.out.println("before save");
-               int id =(int) categorydao.saveCategory(c);
-               
-               if(id>0)
-               {
-                   HttpSession categorymsg = request.getSession();
-                   categorymsg.setAttribute("message","Category Added" );
-                  response.sendRedirect("admin.jsp");
-               }
-             
-          
-           
+            String title = request.getParameter("title");
+            String desc = request.getParameter("description");
+            String operarion = request.getParameter("operation");
+            out.print(operarion);
+
+            if (operarion.equals("addcategory")) {
+                Category c = new Category();
+                c.setCategoryTittle(title);
+                c.setCategoryDescription(desc);
+                Categorydao categorydao = new Categorydao(FactoryProvider.getFactory());
+
+                int id = (int) categorydao.saveCategory(c);
+
+                if (id > 0) {
+                    HttpSession categorymsg = request.getSession();
+                    categorymsg.setAttribute("message", "Category Added");
+                    response.sendRedirect("admin.jsp");
+                }
+            }
+            else if(operarion.equals("addProduct"))
+            {
+                
+            }
+
         }
     }
 
