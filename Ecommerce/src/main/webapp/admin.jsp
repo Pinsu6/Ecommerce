@@ -84,7 +84,7 @@
         <div class="modal fade" id="AddCategorie" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
-                    <form action="productoperarion"> 
+                    <form action="productoperation"> 
                         <input type="hidden" name="operation" value="addcategory">
                         <div class="modal-header bg-info t">
                             <h1 class="modal-title fs-5 text-white " id="exampleModalLabel">Add Category</h1>
@@ -114,7 +114,7 @@
         <div class="modal fade" id="AddProduct" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
-                    <form action="productoperarion"> 
+                    <form action="productoperarion" method="post" enctype="multipart/form-data">  
                         <input type="hidden" name="operation" value="addproduct">
                         <div class="modal-header bg-info t">
                             <h1 class="modal-title fs-5 text-white " id="exampleModalLabel">Add Category</h1>
@@ -148,10 +148,10 @@
                             <div class="form-group mt-2">
                                 <select class="form-select mt-2" name="catid" aria-label="Default select example">
                                     <%                                        
-                                        for (Category title : c) {
-                                       
+                                            for (Category title : c) {
+
                                     %>
-                                    <option value="<%= title.getCategoryTittle()%>"><%= title.getCategoryTittle()%></option>
+                                    <option value="<%= title.getCategoryId()%>"><%= title.getCategoryTittle()%></option>
                                     <%
                                         }
                                     %>

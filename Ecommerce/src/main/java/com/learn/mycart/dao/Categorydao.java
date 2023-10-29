@@ -34,4 +34,12 @@ public class Categorydao {
        return list;
         
     }
+    
+    public Category getCatid(int cid)
+    {
+        Session s = this.factory.openSession();
+        Category cat = s.get(Category.class, cid);
+        s.close();
+        return cat;
+    }
 }

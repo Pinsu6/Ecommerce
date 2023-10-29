@@ -4,7 +4,7 @@ package com.learn.mycart.entities;
 import javax.persistence.*;
 
 @Entity
-class Product {
+public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int pId;

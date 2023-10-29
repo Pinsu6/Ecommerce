@@ -16,6 +16,10 @@
         <servlet-name>productoperarion</servlet-name>
         <servlet-class>com.learn.mycart.servlet.productoperarion</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>productoperation</servlet-name>
+        <servlet-class>com.learn.mycart.servlet.productoperation</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Register</servlet-name>
         <url-pattern>/Register</url-pattern>
@@ -31,6 +35,10 @@
     <servlet-mapping>
         <servlet-name>productoperarion</servlet-name>
         <url-pattern>/productoperarion</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>productoperation</servlet-name>
+        <url-pattern>/productoperation</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

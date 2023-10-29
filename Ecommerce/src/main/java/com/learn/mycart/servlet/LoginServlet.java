@@ -32,7 +32,7 @@ public class LoginServlet extends HttpServlet {
                 response.sendRedirect("index.jsp");
 
             }
-            else
+          else if(user.getUserType().equals("admin"))
             {
                 response.sendRedirect("admin.jsp");
             }
